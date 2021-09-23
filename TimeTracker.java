@@ -34,7 +34,7 @@ public class TimeTracker {
 
             double start = System.nanoTime();
     
-            for (int j=0; j<size; j++){
+            for (int j=1; j<size; j++){
                 list.add(0, j);
             }
 
