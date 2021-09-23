@@ -34,7 +34,7 @@ public class TimeTracker {
 
             double start = System.nanoTime();
     
-            for (int j=1; j<size; j++){
+            for (int j=1; j<=size; j++){
                 list.add(0, j);
             }
 
@@ -50,7 +50,7 @@ public class TimeTracker {
             totalTime = totalTime + elapsedTime;
         }
 
-        double avgTime = totalTime / 10;
+        double avgTime = totalTime / size;
 
         System.out.println("Adding to Front of List for Size " + list.size() + ":");
         System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
