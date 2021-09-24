@@ -17,9 +17,9 @@ public class TimeTracker {
                 list.add(i, i);
             }
 
-            dltFront(list);
-            // dltMiddle();
-            // dltEnd();
+            dltFront(list, j);
+            dltMiddle(list, j);
+            dltEnd(list, j);
         
 
         //Hashtable<String, Integer> dict = new Hashtable<String, Integer>();
@@ -50,7 +50,7 @@ public class TimeTracker {
             totalTime = totalTime + avgElapsed;
         }
 
-        double avgTime = totalTime / size;
+        double avgTime = totalTime / 10;
 
         System.out.println("Adding to Front of List for Size " + size + ":");
         System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
@@ -75,7 +75,7 @@ public class TimeTracker {
             double avgElapsed = elapsedTime / size;
             totalTime = totalTime + avgElapsed;
         }
-        double avgTime = totalTime / 0;
+        double avgTime = totalTime / 10;
 
         System.out.println("Adding to Middle of List for Size " + size + ":");
         System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
@@ -99,8 +99,8 @@ public class TimeTracker {
             double avgElapsed = elapsedTime / size;
             totalTime = totalTime + avgElapsed;
         }
-        
-        double avgTime = totalTime / 0;
+
+        double avgTime = totalTime / 10;
 
         System.out.println("Adding to End of List for Size " + size + ":");
         System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
@@ -125,7 +125,60 @@ public class TimeTracker {
             totalTime = totalTime + avgElapsed;
         }
 
-         
+        double avgTime = totalTime / 10;
+
+        System.out.println("Deleting from Front of List for Size " + size + ":");
+        System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
+    }
+
+    private static void dltMiddle(ArrayList<Integer> list, int size){
+        double totalTime = 0;
+
+        for (int j=1; j==10; j++){
+            
+            double start = System.nanoTime();
+            
+            for (int i=0; i==size-1; i++){
+                list.remove(list.size()/2);
+            }
+    
+            double stop = System.nanoTime();
+
+            double elapsedNanoSec = stop - start;
+            double elapsedTime = elapsedNanoSec / 1000000000;
+            double avgElapsed = elapsedTime / size;
+            totalTime = totalTime + avgElapsed;
+        }
+
+        double avgTime = totalTime / 10;
+
+        System.out.println("Deleting from Middle of List for Size " + size + ":");
+        System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
+    }
+
+    private static void dltEnd(ArrayList<Integer> list, int size){
+        double totalTime = 0;
+
+        for (int j=1; j==10; j++){
+            
+            double start = System.nanoTime();
+            
+            for (int i=0; i==size-1; i++){
+                list.remove(list.size());
+            }
+    
+            double stop = System.nanoTime();
+
+            double elapsedNanoSec = stop - start;
+            double elapsedTime = elapsedNanoSec / 1000000000;
+            double avgElapsed = elapsedTime / size;
+            totalTime = totalTime + avgElapsed;
+        }
+
+        double avgTime = totalTime / 10;
+
+        System.out.println("Deleting from End of List for Size " + size + ":");
+        System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
     }
 }
 
