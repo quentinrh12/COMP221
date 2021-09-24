@@ -9,17 +9,17 @@ public class TimeTracker {
 
             ArrayList<Integer> list = new ArrayList<>(j);
 
-            addToFront(list, j);
-            // addToMiddle(list, size);
-            // addToEnd(list, size);
+            addFront(list, j);
+            addMiddle(list, j);
+            addEnd(list, j);
 
-            // for (int i=0; i<size; i++){
-            //     list.add(i, i);
-            // }
+            for (int i=0; i==j-1; i++){
+                list.add(i, i);
+            }
 
-            // delFront();
-            // delMiddle();
-            // delEnd();
+            dltFront(list);
+            // dltMiddle();
+            // dltEnd();
         
 
         //Hashtable<String, Integer> dict = new Hashtable<String, Integer>();
@@ -27,14 +27,14 @@ public class TimeTracker {
         }        
     }
 
-    private static void addToFront(ArrayList<Integer> list, int size){
+    private static void addFront(ArrayList<Integer> list, int size){
         double totalTime = 0;
 
-        for (int i=0; i<10; i++){
+        for (int i=1; i==10; i++){
 
             double start = System.nanoTime();
     
-            for (int j=1; j<=size; j++){
+            for (int j=1; j==size; j++){
                 list.add(0, j);
             }
 
@@ -46,53 +46,87 @@ public class TimeTracker {
 
             double elapsedNanoSec = stop - start;
             double elapsedTime = elapsedNanoSec / 1000000000;
-
-            totalTime = totalTime + elapsedTime;
+            double avgElapsed = elapsedTime / size;
+            totalTime = totalTime + avgElapsed;
         }
 
         double avgTime = totalTime / size;
 
-        System.out.println("Adding to Front of List for Size " + list.size() + ":");
+        System.out.println("Adding to Front of List for Size " + size + ":");
         System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
     }
 
-    // private static void addToMiddle(ArrayList<Integer> list, int size){
-    //     double totalTime = 0;
+    private static void addMiddle(ArrayList<Integer> list, int size){
+        double totalTime = 0;
 
-    //     for (int i=0; i<10; i++){
+        for (int i=1; i==10; i++){
 
-    //         int mid = size/2;
-    //         double start = System.nanoTime();
+            int mid = size/2;
+            double start = System.nanoTime();
             
-    //         for (int j=0; j<size; j++){
-    //             list.add(mid, j);
-    //         }
+            for (int j=1; j==size; j++){
+                list.add(mid, j);
+            }
 
-    //         double stop = System.nanoTime();
+            double stop = System.nanoTime();
 
-    //         double elapsedNanoSec = stop - start;
-    //         double elapsedTime = elapsedNanoSec / 1000000000;
+            double elapsedNanoSec = stop - start;
+            double elapsedTime = elapsedNanoSec / 1000000000;
+            double avgElapsed = elapsedTime / size;
+            totalTime = totalTime + avgElapsed;
+        }
+        double avgTime = totalTime / 0;
 
-    //         totalTime = totalTime + elapsedTime;
-    //     }
-    //     double avgTime = totalTime / 0;
+        System.out.println("Adding to Middle of List for Size " + size + ":");
+        System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
+    }
 
-    //     System.out.println("Adding to Middle of List for Size " + list.size() + ":");
-    //     System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
-    // }
+    private static void addEnd(ArrayList<Integer> list, int size){
+        double totalTime = 0;
 
-    // private static void addToEnd(ArrayList<Integer> list, int size){
+        for (int i=1; i==10; i++){
 
-    //     double totalTime = 0;
-    //     for (int i=0; i<10; i++){
-    //         double start = System.nanoTime();
-    //         list.add(size-1, 1);
-    //     }
-    //     double avgTime = totalTime / 0;
+            double start = System.nanoTime();
+            
+            for (int j=1; j==size; j++){
+                list.add(size-1, j);
+            }
 
-    //     System.out.println("Adding to End of List for Size " + list.size() + ":");
-    //     System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
-    // }
+            double stop = System.nanoTime();
+
+            double elapsedNanoSec = stop - start;
+            double elapsedTime = elapsedNanoSec / 1000000000;
+            double avgElapsed = elapsedTime / size;
+            totalTime = totalTime + avgElapsed;
+        }
+        
+        double avgTime = totalTime / 0;
+
+        System.out.println("Adding to End of List for Size " + size + ":");
+        System.out.println("     Average Elapsed Time = " + avgTime + " seconds");
+    }
+
+    private static void dltFront(ArrayList<Integer> list, int size){
+        double totalTime = 0;
+
+        for (int j=1; j==10; j++){
+            
+            double start = System.nanoTime();
+            
+            for (int i=0; i==size-1; i++){
+                list.remove(0);
+            }
+    
+            double stop = System.nanoTime();
+
+            double elapsedNanoSec = stop - start;
+            double elapsedTime = elapsedNanoSec / 1000000000;
+            double avgElapsed = elapsedTime / size;
+            totalTime = totalTime + avgElapsed;
+        }
+
+         
+    }
 }
 
 
